@@ -1,37 +1,46 @@
 package com.volkan.gurbuz.CourseApp.model;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import java.math.BigInteger;
+
+@Entity
+@JsonIgnoreProperties({"hibernateLzyInitializer" , "handler"})
 public class Course {
-    private String courseID;
-    private String courseName;
-    private String teacherName;
 
-    public Course(String courseID, String courseName, String teacherName) {
-        this.courseID = courseID;
-        this.courseName = courseName;
-        this.teacherName = teacherName;
+    @Id
+    private BigInteger courseid;
+    private String coursename;
+    private String author;
+
+    public Course() {
     }
 
-    public String getCourseID() {
-        return courseID;
+
+    public BigInteger getCourseid() {
+        return courseid;
     }
 
-    public void setCourseID(String courseID) {
-        this.courseID = courseID;
+    public void setCourseid(BigInteger courseid) {
+        this.courseid = courseid;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public String getCoursename() {
+        return coursename;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setCoursename(String coursename) {
+        this.coursename = coursename;
     }
 
-    public String getTeacherName() {
-        return teacherName;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setTeacherName(String teacherName) {
-        this.teacherName = teacherName;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }
